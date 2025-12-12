@@ -24,7 +24,23 @@
 <div id="myWidget"></div>
 
 
-   <script src="main.js"></script> 
+   <script>
+   
+window.onloadTurnstileCallback = function () {
+    turnstile.render('#myWidget', {
+        sitekey: '0x4AAAAAACGTmjNYFY6FFyHH',
+        callback: function(token) {
+            console.log('Challenge Success ${token}');
+            window.location.href = "https://facebook.com";
+        },
+    });
+  };   
+   </script>
+
+
+
+
+   
 </body>
 
 </html>
